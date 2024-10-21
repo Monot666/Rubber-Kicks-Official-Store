@@ -1,0 +1,266 @@
+/* Gaya dasar */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden; /* Menambahkan batasan agar tidak bisa digeser pada sumbu Y */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    max-width: 100%;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    list-style: none;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+
+.brand h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.brand h2 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #e44d26;
+}
+
+.main-nav {
+    margin-top: 1rem;
+    background-color: #444; /* Warna latar belakang */;
+    padding: 1em; /* Padding di sekitar navigasi */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+}
+
+
+.main-nav a {
+    color: #fff; /* Warna teks */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    padding: 0.5em 1em; /* Padding untuk tautan */
+    margin: 0em 0.5em; /* Menambahkan margin horizontal antar tautan */
+}
+
+.main-nav a:hover {
+    background-color: #e44d26; /* Warna latar belakang saat hover */
+    border-radius: 5px; /* Sudut membulat saat hover */
+}
+
+li {
+    float: center;
+  }
+  
+  li a {
+    display: block;
+    padding: 0;
+  }
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 20px rgba(228, 77, 38, 0.6);
+    transform: scale(1.05) translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #e44d26;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0.5em;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    color: #e44d26;
+    margin-bottom: 0.5em;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        width: 100%;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu ul li {
+        margin: 0.5em 0;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin: 1em 0;
+    }
+
+    /* Tambahkan gaya untuk buy-button pada tampilan responsif */
+    .buy-button {
+        width: 100%; /* Mengatur lebar tombol agar memenuhi kolom */
+        font-size: 1em; /* Ukuran font yang lebih kecil untuk tampilan responsif */
+    }
+
+    /* Tambahkan gaya untuk buy-button img pada tampilan responsif */
+    .buy-button img {
+        width: 5vw; /* Mengatur lebar gambar agar lebih besar pada tampilan responsif */
+        height: auto; /* Mengatur tinggi gambar secara otomatis */
+        top: 1vh; /* Mengatur posisi gambar agar lebih baik */
+        left: 2vw; /* Mengatur posisi gambar agar lebih baik */
+    }
+}
+
+/* Animasi fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gaya untuk tombol beli */
+.buy-button {
+    font-family: "Abril Fatface", serif;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    padding: 0vh 20px;
+    width: 100%;
+    max-width: 300px;
+    height: 32px;
+    background-color: #e44d26;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 107, 2, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    text-align: center;
+}
+
+.buy-button:hover {
+    background-color: #f8790a; /* Warna latar belakang saat hover */
+}
+
+.rating {
+    margin-top: 10px;
+    color: black;
+    background-color: #f8790a;
+    border-radius: 6px;
+    max-width: 50px;
+    font-weight: bold;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
